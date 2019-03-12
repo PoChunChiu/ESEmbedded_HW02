@@ -1,53 +1,28 @@
-HW02
-===
-This is the hw02 sample. Please follow the steps below.
+# 1. 實驗題目
 
-# Build the Sample Program
+撰寫簡易語法 pop 與 push 之觀測結果
 
-1. Fork this repo to your own github account.
+# 2. 實驗步驟
 
-2. Clone the repo that you just forked.
+  1. 為方便觀察，先以 mov 賦予 r0、r1、r2 數值，並撰寫 push 、 pop 指令。先以 push {r0,r1,r2} 作為實驗程式碼。
+  main.s:
+  
+  2. 將 main.s 編譯並以 qemu 模擬。
+  ![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/ESE_or.JPG)
+  
+  3.觀察 push 、 pop 之運作。使用push {r0,r1,r2}可以看到 sp 、pc 與 msp皆有改變。
 
-3. Under the hw02 dir, use:
+![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/push_012.JPG)
+  
+  4. 以 vim 編輯 main.s，但改以 push {r2,r0,r1}作為實驗程式碼，重複步驟2。
 
-	* `make` to build.
+# 3. 結果與討論
 
-	* `make clean` to clean the ouput files.
+  1. pop 會將先前 push 最後置入之元素取出，置入 pop 之餘元素。
+  
+  2. 改變 push 之順訊由{r0,r1,r2}至{r2,r0,r1}並不影響結果，但在 make 階段會因為 register range 並非升冪造成的 warning ，並替我們修正:
+  ![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/warning.JPG)
 
-4. Extract `gnu-mcu-eclipse-qemu.zip` into hw02 dir. Under the path of hw02, start emulation with `make qemu`.
-
-	See [Lecture 02 ─ Emulation with QEMU] for more details.
-
-5. The sample is designed to help you to distinguish the main difference between the `b` and the `bl` instructions.  
-
-	See [ESEmbedded_HW02_Example] for knowing how to do the observation and how to use markdown for taking notes.
-
-# Build Your Own Program
-
-1. Edit main.s.
-
-2. Make and run like the steps above.
-
-# HW02 Requirements
-
-1. Please modify main.s to observe the `push` and the `pop` instructions:  
-
-	Does the order of the registers in the `push` and the `pop` instructions affect the excution results?  
-
-	For example, will `push {r0, r1, r2}` and `push {r2, r0, r1}` act in the same way?  
-
-	Which register will be pushed into the stack first?
-
-2. You have to state how you designed the observation (code), and how you performed it.  
-
-	Just like how [ESEmbedded_HW02_Example] did.
-
-3. If there are any official data that define the rules, you can also use them as references.
-
-4. Push your repo to your github. (Use .gitignore to exclude the output files like object files or executable files and the qemu bin folder)
-
-[Lecture 02 ─ Emulation with QEMU]: http://www.nc.es.ncku.edu.tw/course/embedded/02/#Emulation-with-QEMU
-[ESEmbedded_HW02_Example]: https://github.com/vwxyzjimmy/ESEmbedded_HW02_Example
 
 --------------------
 
@@ -55,30 +30,6 @@ This is the hw02 sample. Please follow the steps below.
 
 --------------------
 
-# HW02 "b" and "bl" observation
-
-1. When we use "b", an address is stored at "pc" only.
-
-![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/b.JPG)
-
-2. When we use "bl", an address is stored at "pc" and "lr(link register)".
-
-![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/bl.JPG)
-
-# HW02 "push" and "pop" observation
-
-1. 為方便觀察，先以mov賦予r0、r1、r2數值。
-
-![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/ESE_or.JPG)
-      
-2. 使用push {r0,r1,r2}可以看到 sp 、pc 與 msp皆有改變。
-
-![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/push_012.JPG)
-
-      
-3. 使用push {r2,r0,r1}可以觀察到一樣的程式運作，但在 make 階段會因為 register range 並非升冪造成的 warning
-
-![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/warning.JPG)
       
 
 
