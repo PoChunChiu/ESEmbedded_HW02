@@ -65,11 +65,16 @@ This is the hw02 sample. Please follow the steps below.
 
 1. 為方便觀察，先以mov賦予r0、r1、r2數值。
 
+        ESEmbedded_HW02/ESE_or.JPG
+      
 2. 使用push {r0,r1,r2}可以看到 sp 、pc 與 msp皆有改變。
 
+        ESEmbedded_HW02/push_012.JPG
+      
 3. 使用push {r2,r0,r1}可以觀察到一樣的程式運作，但在 make 階段會因為 register range 並非升冪造成的 warning
 
-
+        ESEmbedded_HW02/warning.JPG
+      
 
 
 
