@@ -8,12 +8,12 @@
 _start:
 	nop
 	
-	//movs	r0,	#1
-	//movs	r1,	#2
-	//mov	r2,	#3	
+	movs	r0,	#1
+	movs	r1,	#2
+	mov	r2,	#3	
 
-	//push	{r0, r1, r2}
-	//pop	{r3, r4, r5}
+	push	{r0, r1, r2}
+	pop	{r3, r4, r5}
 	//
 	//branch w/o link
 	//
