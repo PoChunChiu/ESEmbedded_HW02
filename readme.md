@@ -64,16 +64,14 @@ This is the hw02 sample. Please follow the steps below.
 # HW02 "push" and "pop" observation
 
 1. 為方便觀察，先以mov賦予r0、r1、r2數值。
-
-        ![image]https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/ESE_or.JPG
+![image]https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/ESE_or.JPG
       
 2. 使用push {r0,r1,r2}可以看到 sp 、pc 與 msp皆有改變。
+![image]https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/push_012.JPG
 
-        ![image]https://github.com/PoChunChiu/ESEmbedded_HW02/commit/ea06a50702041cc5e97fc688ac07e729d230dab7
       
 3. 使用push {r2,r0,r1}可以觀察到一樣的程式運作，但在 make 階段會因為 register range 並非升冪造成的 warning
-
-        ![image]https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/warning.JPG
+![image]https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/warning.JPG
       
 
 
