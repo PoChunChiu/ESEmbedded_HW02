@@ -59,19 +59,26 @@ This is the hw02 sample. Please follow the steps below.
 
 1. When we use "b", an address is stored at "pc" only.
 
+![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/b.JPG)
+
 2. When we use "bl", an address is stored at "pc" and "lr(link register)".
+
+![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/bl.JPG)
 
 # HW02 "push" and "pop" observation
 
 1. 為方便觀察，先以mov賦予r0、r1、r2數值。
-![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/ESE_or.JPG)
+
+![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/ESE_or.JPG)
       
 2. 使用push {r0,r1,r2}可以看到 sp 、pc 與 msp皆有改變。
-![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/push_012.JPG)
+
+![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/push_012.JPG)
 
       
 3. 使用push {r2,r0,r1}可以觀察到一樣的程式運作，但在 make 階段會因為 register range 並非升冪造成的 warning
-![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/warning.JPG)
+
+![image](https://github.com/PoChunChiu/ESEmbedded_HW02/blob/master/img_folder/warning.JPG)
       
 
 
