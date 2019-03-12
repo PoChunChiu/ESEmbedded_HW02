@@ -55,4 +55,18 @@ This is the hw02 sample. Please follow the steps below.
 
 --------------------
 
-Please take your note here.
+# HW02 "b" and "bl" observation
+
+1. When we use "b", an address is stored at "pc" only.
+
+2. When we use "bl", an address is stored at "pc" and "lr(link register)".
+
+# HW02 "push" and "pop" observation
+
+
+
+
+
+
+
+
